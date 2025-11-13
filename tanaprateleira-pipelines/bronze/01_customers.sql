@@ -40,7 +40,6 @@ TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "customers",
   "subdomain" = "geolocation",
-/Volumes/catalog-impacta-capstone/default/capstone/olist_geolocation_dataset.csv  "source_system" = "csv",
   "layer" = "raw_ingestion",
   "update_frequency" = "daily"
 )
