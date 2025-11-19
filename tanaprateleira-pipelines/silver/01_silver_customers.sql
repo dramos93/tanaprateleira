@@ -8,7 +8,7 @@
 -- 1. SILVER: CUSTOMERS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_customers
+CREATE MATERIALIZED VIEW silver.customers
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "customers",
@@ -35,7 +35,7 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_customers
+FROM bronze.customers
 WHERE
   -- Remove linhas completamente nulas
   customer_id IS NOT NULL;
@@ -44,7 +44,7 @@ WHERE
 -- 2. SILVER: GEOLOCATION (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_geolocation
+CREATE MATERIALIZED VIEW silver.geolocation
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "customers",
@@ -70,6 +70,6 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_geolocation
+FROM bronze.geolocation
 WHERE
   geolocation_zip_code_prefix IS NOT NULL;

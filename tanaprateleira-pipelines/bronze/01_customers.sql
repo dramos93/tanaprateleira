@@ -1,14 +1,14 @@
 -- ============================================================================
 -- BRONZE LAYER - CUSTOMERS DOMAIN
 -- Arquivo: bronze/01_customers.sql
--- Tabelas: olist_customers + olist_geolocation
+-- Tabelas: customers + geolocation
 -- ============================================================================
 
 -- ============================================================================
 -- 1. BRONZE: CUSTOMERS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_customers
+CREATE MATERIALIZED VIEW bronze.customers
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "customers",
@@ -35,7 +35,7 @@ FROM read_files(
 -- 2. BRONZE: GEOLOCATION
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_geolocation
+CREATE MATERIALIZED VIEW bronze.geolocation
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "customers",

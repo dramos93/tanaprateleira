@@ -1,14 +1,14 @@
 -- ============================================================================
 -- BRONZE LAYER - ORDERS DOMAIN
 -- Arquivo: bronze/02_orders.sql
--- Tabelas: olist_orders + order_items + order_payments + order_reviews
+-- Tabelas: orders + order_items + order_payments + order_reviews
 -- ============================================================================
 
 -- ============================================================================
 -- 1. BRONZE: ORDERS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_orders
+CREATE MATERIALIZED VIEW bronze.orders
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "orders",
@@ -35,7 +35,7 @@ FROM read_files(
 -- 2. BRONZE: ORDER ITEMS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_order_items
+CREATE MATERIALIZED VIEW bronze.order_items
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "orders",
@@ -63,7 +63,7 @@ FROM read_files(
 -- 3. BRONZE: ORDER PAYMENTS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_order_payments
+CREATE MATERIALIZED VIEW bronze.order_payments
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "orders",
@@ -91,7 +91,7 @@ FROM read_files(
 -- 4. BRONZE: ORDER REVIEWS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_order_reviews
+CREATE MATERIALIZED VIEW bronze.order_reviews
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "orders",

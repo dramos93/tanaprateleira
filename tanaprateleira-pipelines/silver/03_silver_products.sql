@@ -8,7 +8,7 @@
 -- 1. SILVER: PRODUCTS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_products
+CREATE MATERIALIZED VIEW silver.products
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "products",
@@ -36,7 +36,7 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_products
+FROM bronze.products
 WHERE
   product_id IS NOT NULL;
 

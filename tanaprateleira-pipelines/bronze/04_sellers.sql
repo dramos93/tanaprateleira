@@ -1,14 +1,14 @@
 -- ============================================================================
 -- BRONZE LAYER - SELLERS DOMAIN
 -- Arquivo: bronze/04_sellers.sql
--- Tabelas: olist_sellers
+-- Tabelas: sellers
 -- ============================================================================
 
 -- ============================================================================
 -- BRONZE: SELLERS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_sellers
+CREATE MATERIALIZED VIEW bronze.sellers
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "sellers",

@@ -8,7 +8,7 @@
 -- 1. SILVER: ORDERS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_orders
+CREATE MATERIALIZED VIEW silver.orders
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "orders",
@@ -36,7 +36,7 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_orders
+FROM bronze.orders
 WHERE
   order_id IS NOT NULL;
 
@@ -44,7 +44,7 @@ WHERE
 -- 2. SILVER: ORDER ITEMS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_order_items
+CREATE MATERIALIZED VIEW silver.order_items
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "orders",
@@ -72,7 +72,7 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_order_items
+FROM bronze.order_items
 WHERE
   order_id IS NOT NULL AND product_id IS NOT NULL;
 
@@ -80,7 +80,7 @@ WHERE
 -- 3. SILVER: ORDER PAYMENTS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_order_payments
+CREATE MATERIALIZED VIEW silver.order_payments
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "orders",
@@ -106,7 +106,7 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_order_payments
+FROM bronze.order_payments
 WHERE
   order_id IS NOT NULL;
 
@@ -114,7 +114,7 @@ WHERE
 -- 4. SILVER: ORDER REVIEWS (limpo)
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_order_reviews
+CREATE MATERIALIZED VIEW silver.order_reviews
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "orders",
@@ -141,6 +141,6 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_order_reviews
+FROM bronze.order_reviews
 WHERE
   review_id IS NOT NULL;

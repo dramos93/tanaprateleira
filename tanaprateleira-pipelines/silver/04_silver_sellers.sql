@@ -4,7 +4,7 @@
 -- Responsabilidade: LIMPEZA APENAS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW silver.olist_sellers
+CREATE MATERIALIZED VIEW silver.sellers
 TBLPROPERTIES (
   "quality" = "silver",
   "domain" = "sellers",
@@ -29,6 +29,6 @@ SELECT
   _source_file,
   _ingestion_time,
   _processed_at
-FROM bronze.olist_sellers
+FROM bronze.sellers
 WHERE
   seller_id IS NOT NULL;

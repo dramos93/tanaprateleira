@@ -1,14 +1,14 @@
 -- ============================================================================
 -- BRONZE LAYER - PRODUCTS DOMAIN
 -- Arquivo: bronze/03_products.sql
--- Tabelas: olist_products + product_categories
+-- Tabelas: products + product_categories
 -- ============================================================================
 
 -- ============================================================================
 -- 1. BRONZE: PRODUCTS
 -- ============================================================================
 
-CREATE MATERIALIZED VIEW bronze.olist_products
+CREATE MATERIALIZED VIEW bronze.products
 TBLPROPERTIES (
   "quality" = "bronze",
   "domain" = "products",
